@@ -34,10 +34,16 @@ public class Library {
 
 		@Override
 		public Iterator<Book> iterator() {
-			// Хэрэгжүүл: minYear-с хойшхи номнуудыг буцаа
-			return null; // Оруул
+			List<Book> Filtered = new ArrayList<>();
+			for(Book book : books){
+				if(book.getYear() >= minYear){
+					filtered.add(book);
+				}
+			}
+			return filtered.iterator();
 		}
 	}
+			
 
 	public BookShelf getRecentBooks(int minYear) {
 		return new BookShelf(minYear);
